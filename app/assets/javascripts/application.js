@@ -4,6 +4,9 @@
 //= require activestorage
 //= require jquery_ujs
 //= require jquery-ui
+//= require rails-ujs
+//= require bootstrap
+//= require activestorage
 //= require turbolinks
 //= require ckeditor/init
 //= require i18n
