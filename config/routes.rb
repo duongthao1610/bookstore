@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+  get 'password_resets/edit'
   root "books#index"
   mount Ckeditor::Engine => "/ckeditor"
   get "/home", to: "static_pages#home"
@@ -25,4 +27,5 @@ Rails.application.routes.draw do
   resources :books do
     resources :comments
   end
+  resources :password_resets, only: %i(new create edit update)
 end

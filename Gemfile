@@ -28,6 +28,7 @@ gem "jquery-rails"
 gem "materialize-sass"
 gem "font-awesome-rails"
 gem "i18n-js"
+gem "figaro"
 
 group :development, :test do
   gem "sqlite3", "1.3.13"

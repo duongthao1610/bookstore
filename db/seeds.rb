@@ -24,7 +24,7 @@ Author.create!( name: "Hoàng Trọng Hiếu",
       birthday: "18/12/1996",
       id: "2")
 
-Category.create!(id: "3", name: "Science fiction", description: "Science fiction book")r
+Category.create!(id: "3", name: "Science fiction", description: "Science fiction book")
 Book.create!(title:  "Bạch Dạ Hành",
              id: "3",
              publisher: "Nhã Nam",
@@ -98,45 +98,40 @@ end
   Payment.create! payment_type: type, description: des
 end
 
-User.create! name: "Duong Phuong Thao",
-             email: "duongthao@gmail.com",
-             password: "111111",
-             password_confirmation: "111111",
-             dob: "1/1/1991",
-             is_admin: false,
-             payment_id: 1
-
-User.create! name: "Admin",
-             email: "admin@example.com",
+5.times do |n|
+name  = Faker::Name.name
+User.create! name: name,
+             email: "admin#{n+1}@example.com",
              password: "111111",
              password_confirmation: "111111",
              dob: "1/1/1991",
              is_admin: true,
              payment_id: 1
-
-10.times do |n|
-  name = FFaker::Name.name
-  birthday = "10/10/1960"
-  Author.create! name: name,
-                birthday: birthday
 end
 
-5.times do |n|
-  name = "Category-#{n+1}"
-  description = "Book type #{n+1}"
-  Category.create! name: name,
-                  description: description
+6.upto(40) do |n|
+name  = Faker::Name.name
+User.create! name: name,
+             email: "admin#{n+1}@example.com",
+             password: "111111",
+             password_confirmation: "111111",
+             dob: "1/1/1991",
+             is_admin: false,
+             payment_id: 1
 end
 
-30.times do|n|
-  title = "Book-#{n+1}"
-  publisher = "Publisher-#{n+1}"
-  des = "Book-#{n+1} description"
-  Book.create!(title: title, publisher: publisher, price: 10000,
-    quantity_in_store: rand(1..10), description: des, category_id: rand(1..5))
-end
+Category.create!  name: "Science fiction",
+                  description: "Science fiction book"
+Category.create!  name: "Psychology",
+                  description: "Psychology book"
+Category.create!  name: "Comics",
+                  description: "Comics book"
+Category.create!  name: "Romance",
+                  description: "Romance book"
+Category.create!  name: "Mystery",
+                  description: "Mystery book"
 
-30.times do |n|
+15.times do |n|
   AuthorDetail.create!(book_id: n+1, author_id: rand(1..10))
 end
 

@@ -145,6 +145,8 @@ ActiveRecord::Schema.define(version: 2018_11_11_141852) do
     t.string "password_digest"
     t.string "remember_digest"
     t.boolean "is_admin", default: false
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
   end
 
 end

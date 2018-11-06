@@ -4,7 +4,8 @@ user:
   max_email_size: 255
   min_password_size: 6
   avatar_profile: 200
-
+  avatar_comment: 50
+  reset_expired_time: 2
 book:
   book_size: 250x300
   per_page: 20
@@ -29,3 +30,6 @@ books:
 
 header:
   size: "1000x400"
+
+mailers:
+  from_email: <%= ENV["FROM_EMAIL"] %>

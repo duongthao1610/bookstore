@@ -20,8 +20,9 @@ class User < ApplicationRecord
   has_many :cart_items , dependent: :destroy
   has_many :books_in_cart , through: :cart_items, source: :book, dependent: :destroy
   has_many :orders, dependent: :destroy
-  attr_accessor :remember_token
+  has_one :cart, dependent: :destroy
   belongs_to :payment
+  attr_accessor :remember_token, :reset_token
   before_save :email_downcase
   validates :name, presence: true,
     length: {maximum: Settings.user.max_name_size}
@@ -36,7 +37,7 @@ class User < ApplicationRecord
 
   def User.digest string
     cost = ActiveModel::SecurePassword.min_cost ?
-      bCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+      BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
     BCrypt::Password.create string, cost: cost
   end
 
@@ -53,7 +54,7 @@ class User < ApplicationRecord
     digest = self.send("#{attribute}_digest")
 
     return false unless !digest.nil?
-    Bcrypt::Password.new(digest).is_password?(token)
+    BCrypt::Password.new(digest).is_password?(token)
   end
 
   def forget
@@ -84,6 +85,20 @@ class User < ApplicationRecord
 
   def liked?(book)
     favorite_books.include?(book)
+  end
+
+  def create_reset_digest
+    self.reset_token = User.new_token
+    update_attribute(:reset_digest, User.digest(reset_token))
+    update_attribute(:reset_sent_at, Time.zone.now)
+  end
+
+  def send_password_reset_email
+    UserMailer.password_reset(self).deliver_now
+  end
+
+  def password_reset_expired?
+    reset_sent_at < (Settings.user.reset_expired_time).hours.ago
   end
 
   private
