@@ -132,9 +132,9 @@ Category.create!  name: "Mystery",
                   description: "Mystery book"
 
 15.times do |n|
-  AuthorDetail.create!(book_id: n+1, author_id: rand(1..10))
+  AuthorBook.create!(book_id: n+1, author_id: rand(1..10))
 end
 
 10.times do |n|
-   AuthorDetail.create!(book_id: n+10, author_id: rand(1..10))
+   AuthorBook.create!(book_id: n+10, author_id: rand(1..10))
 end
