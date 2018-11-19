@@ -24,6 +24,7 @@ class User < ApplicationRecord
   has_many :books_in_cart, through: :cart_items, source: :book, dependent: :destroy
   has_many :orders, dependent: :destroy
   belongs_to :payment
+  enum role: %i{member admin guest}
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
