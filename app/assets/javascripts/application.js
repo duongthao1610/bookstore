@@ -12,3 +12,4 @@
 //= require i18n/translations
 //= require book_search
 //= require create_comment
+//= require books

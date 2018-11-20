@@ -84,31 +84,31 @@ class User < ApplicationRecord
   #   update remember_digest: nil
   # end
 
-  # def cart_total
-  #   total = 0
-  #   self.cart_items.each { |item| total += item.paideach * item.quantity }
-  #   return total
-  # end
+  def cart_total
+    total = 0
+    self.cart_items.each { |item| total += item.paideach * item.quantity }
+    return total
+  end
 
-  # def add_to_cart(book)
-  #   books_in_cart << book
-  # end
+  def add_to_cart(book)
+    books_in_cart << book
+  end
 
-  # def delete_from_cart(book)
-  #   books_in_cart.delete(book)
-  # end
+  def delete_from_cart(book)
+    books_in_cart.delete(book)
+  end
 
-  # def like(book)
-  #   favorite_books << book
-  # end
+  def like(book)
+    favorite_books << book
+  end
 
-  # def unlike(book)
-  #   favorite_books.delete(book)
-  # end
+  def unlike(book)
+    favorite_books.delete(book)
+  end
 
-  # def liked?(book)
-  #   favorite_books.include?(book)
-  # end
+  def liked?(book)
+    favorite_books.include?(book)
+  end
 
   # private
 
