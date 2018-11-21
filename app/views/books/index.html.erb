@@ -11,7 +11,10 @@
         user_favorite_books_path(current_user.id) %></button>
     <% end %>
   </div>
+
   <%= search_form_for @search, url:search_books_path, method: :post do |f| %>
+  <div class="container">
+    <div class="row">
     <div class="form-group col-md-3">
       <%= f.label :title_cont, class: "form-label" %>
       <%= f.text_field :title_cont %>
@@ -26,8 +29,13 @@
         :name, :name, @search.category_name_eq), {:include_blank => true},
           :class => "form-control" %>
     </div>
+   <div class="form-group col-md-3">
     <%= f.submit t(".filter"), class: "btn-primary"%>
+  </div>
+</div>
+</div>
   <% end %>
+
   <div class="all-book row">
     <%= render @books %>
   </div>

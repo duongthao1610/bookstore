@@ -33,6 +33,8 @@ gem "figaro"
 gem "omniauth-google-oauth2"
 gem "cancancan"
 gem "ransack"
+gem "whenever", require: false
+gem "sidekiq"
 
 group :development, :test do
   gem "sqlite3", "1.3.13"

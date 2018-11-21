@@ -1,0 +1,6 @@
+namespace :job do
+  desc "TODO"
+  task mailminute: :environment do
+    MinuteWorker.perform_async MinuteWorker::MAIL_MINUTE
+  end
+end
