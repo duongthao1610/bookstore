@@ -11,19 +11,22 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.order_by_created.filter_by_book_type(params[:category])
-      .page(params[:page]).per Settings.book.per_page
-    @search = Book.ransack(params[:q])
-    @books = @search.result.includes(:category).page(params[:page]).per Settings.book.per_page
+        .page(params[:page]).per Settings.book.per_page
+    @search_ransack = Book.ransack(params[:q])
+    @books = @search_ransack.result.includes(:category).page(params[:page]).per Settings.book.per_page
 
-    if params[:book_name_search]
-      @books = Book.search_by_title(params[:book_name_search]).page(params[:page]).per Settings.book.per_page
-      respond_to do |format|
-        format.html
-        format.js {render :index}
-      end
-    elsif params[:term]
-      @bookss = Book.search_by_title(params[:term]).page(params[:page]).per(Settings.book.per_page)
-      render json: @bookss.map(&:title)
+    # if params[:book_name_search]
+    #   @books = Book.search_by_title(params[:book_name_search]).page(params[:page]).per Settings.book.per_page
+    #   respond_to do |format|
+    #     format.html
+    #     format.js {render :index}
+    #   end
+    # elsif params[:term]
+    #   @bookss = Book.search_by_title(params[:term]).page(params[:page]).per(Settings.book.per_page)
+    #   render json: @bookss.map(&:title)
+    # end
+    if params[:search_book]
+      @books = Book.search params[:search_book]
     end
   end
 

@@ -135,6 +135,19 @@ GEM
       dry-equalizer (~> 0.2)
       dry-logic (~> 0.4, >= 0.4.0)
       dry-types (~> 0.13.1)
+    elasticsearch (6.1.0)
+      elasticsearch-api (= 6.1.0)
+      elasticsearch-transport (= 6.1.0)
+    elasticsearch-api (6.1.0)
+      multi_json
+    elasticsearch-model (6.0.0)
+      activesupport (> 3)
+      elasticsearch (> 1)
+      hashie
+    elasticsearch-rails (6.0.0)
+    elasticsearch-transport (6.1.0)
+      faraday
+      multi_json
     erubi (1.7.1)
     execjs (2.7.0)
     faker (1.9.1)
@@ -351,6 +364,8 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   config
   devise
+  elasticsearch-model
+  elasticsearch-rails
   faker
   ffaker
   figaro

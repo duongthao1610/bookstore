@@ -35,6 +35,8 @@ gem "cancancan"
 gem "ransack"
 gem "whenever", require: false
 gem "sidekiq"
+gem "elasticsearch-model"
+gem "elasticsearch-rails"
 
 group :development, :test do
   gem "sqlite3", "1.3.13"
