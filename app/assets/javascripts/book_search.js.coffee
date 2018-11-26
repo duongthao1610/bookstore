@@ -1,2 +1,2 @@
 jQuery ->
-  $('#book_name_filter').autocomplete({source: $('#book_name_filter').data('autocomplete-source')});
+  $('#search_book').autocomplete({source: $('#search_book').data('autocomplete-source')});

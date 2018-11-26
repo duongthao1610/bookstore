@@ -1,0 +1,8 @@
+<%= form_for books_path, method: :get do |f| %>
+  <p>
+    <%= text_field_tag :search_book, params[:search_book], id: "search_book",
+                       class: "form-control", placeholder: "Search book by name",
+                       data: {autocomplete_source: books_path} %>
+    <%= submit_tag "Go", name: nil %>
+  </p>
+<% end %>
