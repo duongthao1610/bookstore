@@ -15,12 +15,8 @@ class BooksController < ApplicationController
     @search = Book.ransack(params[:q])
     @books = @search.result.includes(:category).page(params[:page]).per Settings.book.per_page
 
-    if params[:book_name_search]
-      @books = Book.search_by_title(params[:book_name_search]).page(params[:page]).per Settings.book.per_page
-      respond_to do |format|
-        format.html
-        format.js {render :index}
-      end
+    if params[:search_book]
+      @books = Book.search(params[:search_book], fields: [:title], highlight: true)
     elsif params[:term]
       @books = Book.search_by_title(params[:term]).page(params[:page]).per(Settings.book.per_page)
       render json: @books.map(&:title)

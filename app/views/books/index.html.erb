@@ -28,7 +28,11 @@
     <%= f.submit t(".filter"), class: "btn-primary"%>
   <% end %>
   <div class="all-book row">
-    <%= render @books %>
+    <% if params[:search_book] %>
+      <%= render "search_results" %>
+    <% else %>
+      <%= render @books %>
+    <% end %>
   </div>
   <div class="paginate-book">
     <%= paginate @books, theme: "twitter-bootstrap-3" %>
