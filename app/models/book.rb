@@ -26,6 +26,14 @@ class Book < ApplicationRecord
   class << self
     # delegate :search, to: :Searchkick if self.public_instance_methods.include?(:search)
 
+  def search_data
+    {
+      title: title
+    }
+  end
+  class << self
+    delegate :search, to: :Searchkick if self.public_instance_methods.include?(:search)
+
   def to_xls(options = {})
     CSV.generate(options) do |csv|
       csv << column_names
@@ -36,5 +44,3 @@ class Book < ApplicationRecord
   end
 end
 end
-
-# Book.reindex
