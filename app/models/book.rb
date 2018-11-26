@@ -1,4 +1,5 @@
 class Book < ApplicationRecord
+  searchkick word_start: [:title], highlight: [:title]
   has_many :comments
   has_many :likes_from_users, class_name: Emotion.name, dependent: :destroy
   has_many :users_liked, through: :likes_from_users, source: :user
@@ -17,7 +18,15 @@ class Book < ApplicationRecord
   scope :filter_by_book_type, -> category_name {Book.includes(:category)
     .where(categories: {name: category_name}) unless category_name.nil?}
 
-  def self.to_xls(options = {})
+  def search_data
+    {
+      title: title
+    }
+  end
+  class << self
+    delegate :search, to: :Searchkick if self.public_instance_methods.include?(:search)
+
+  def to_xls(options = {})
     CSV.generate(options) do |csv|
       csv << column_names
       all.each do |book|
@@ -26,3 +35,6 @@ class Book < ApplicationRecord
     end
   end
 end
+end
+
+Book.reindex

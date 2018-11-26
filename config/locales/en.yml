@@ -278,6 +278,8 @@ en:
       hi: "prohibited this blog from being saved: "
     book:
       liked: " users liked this book"
+    search_results:
+      liked: " users liked this book"
   comments:
     form:
       comment: "Comment"
