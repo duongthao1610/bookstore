@@ -28,4 +28,6 @@ books:
     sizel: 200x250
     sizes: 130x140
 header:
-  size: "1400x400"
+  size: "1000x400"
+mailers:
+  from_email: <%= ENV["FROM_EMAIL"] %>

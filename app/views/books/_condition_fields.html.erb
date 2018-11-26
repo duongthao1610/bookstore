@@ -1,0 +1,16 @@
+<div class="field">
+  <div class="col-md-3">
+     <%= f.attribute_fields do |a| %>
+      <%= a.attribute_select associations: [:category] %>
+    <% end %>
+  </div>
+  <div class="col-md-3">
+    <%= f.predicate_select %>
+  </div>
+  <div class="col-md-3">
+    <%= f.value_fields do |v| %>
+      <%= v.text_field :value %>
+  <% end %>
+  </div>
+  <%= link_to "remove", '#', class: "remove_fields" %>
+</div>

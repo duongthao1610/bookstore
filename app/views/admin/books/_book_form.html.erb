@@ -29,7 +29,7 @@
     <%= f.text_field :description, class: "form-control" %>
     <div>
       <%= f.label :category %>
-      <%= f.select :category_id do %>
+      <%= f.select :category_id  do %>
         <% @categories.each do |c| -%>
           <%= content_tag :option, c.name, value: c.id %>
         <% end %>

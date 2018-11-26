@@ -1,5 +1,6 @@
 class Admin::BaseController < ApplicationController
   layout 'admin_layout'
+  include BooksHelper
   before_action :logged_in_user
   before_action :verify_admin!
 
