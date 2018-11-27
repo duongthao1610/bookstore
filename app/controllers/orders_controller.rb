@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   before_action {flash.clear}
 
   def index
-    @orders = current_user.orders.page(params[:page]).per(Settings.admin.book.per_page)
+    @pagy, @orders = pagy current_user.orders
   end
 
   def show
@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @items = current_user.cart_items.page(params[:page]).per Settings.admin.book.per_page
+    @pagy, @items = pagy current_user.cart_items
     @order = Order.new
     @payments = Payment.all
     @user= current_user

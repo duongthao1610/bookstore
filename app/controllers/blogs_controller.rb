@@ -9,7 +9,7 @@ class BlogsController < ApplicationController
   end
 
   def index
-    @blogs = Blog.page(params[:page]).per(Settings.admin.book.per_page)
+    @pagy, @blogs = pagy Blog.order_by_created.select_blog
   end
 
   def create

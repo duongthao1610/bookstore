@@ -20,7 +20,6 @@ gem "carrierwave"
 gem "mini_magick"
 gem "ckeditor"
 gem "ffaker"
-gem "kaminari"
 gem "bootstrap-kaminari-views"
 gem "font-awesome-rails"
 gem "jquery-ui-rails"
@@ -35,7 +34,7 @@ gem "omniauth-google-oauth2"
 gem "cancancan"
 gem "ransack"
 gem "searchkick"
-
+gem "pagy"
 group :development, :test do
   gem "sqlite3", "1.3.13"
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

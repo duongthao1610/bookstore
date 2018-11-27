@@ -3,8 +3,8 @@ class Admin::BooksController < Admin::BaseController
   before_action :load_categories, :load_authors, only: %i(new edit)
 
   def index
-    @books = Book.order_by_created.search(params[:search]).page(params[:page])
-      .per Settings.book.per_page
+    @pagy, @books = pagy Book.order_by_created.search(params[:search])
+
     respond_to do |format|
       format.js
       format.html
@@ -69,7 +69,7 @@ class Admin::BooksController < Admin::BaseController
   end
 
   def load_categories
-    @categories = Category.all
+    @categories = Category.select_categories
   end
 
   def load_authors
