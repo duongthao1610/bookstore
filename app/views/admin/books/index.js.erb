@@ -1,2 +1,2 @@
 $('.result-search').html('<%= j render "results" %>')
-$('.paginator').html('<%= j paginate @books, theme: "twitter-bootstrap-3"%>')
+$('.paginator').html('<%= j pagy_nav_bootstrap(@pagy) %>')

@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @books = @user.favorite_books.paginate page: params[:page] , per_page: Settings.admin.user.per_page
+    @pagy, @books = pagy @user.favorite_books
   end
 
   private

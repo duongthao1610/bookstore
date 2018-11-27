@@ -2,7 +2,7 @@ class Admin::UsersController < Admin::BaseController
   before_action {flash.clear}
 
   def index
-    @users = User.select_users.created_at.page(params[:page]).per(Settings.admin.book.per_page)
+    @pagy, @users = pagy User.select_users.order_by_created_at
   end
 
   def destroy
@@ -14,7 +14,7 @@ class Admin::UsersController < Admin::BaseController
       flash[:success] = t ".success"
       User.delete(user)
     end
-    @users = User.select_users.created_at.page(params[:page]).per(Settings.admin.book.per_page)
+    @pagy, @users = pagy User.select_users.order_by_created_at
     respond_to do |format|
       format.html { redirect_to admin_users_path }
       format.js

@@ -17,11 +17,6 @@ class Book < ApplicationRecord
    scope :search_by_title, (lambda do |title|
     where("title LIKE ?", "%#{title}%") unless title.nil?
   end)
-  def search_data
-    {
-      title: title
-    }
-  end
 
   class << self
     # delegate :search, to: :Searchkick if self.public_instance_methods.include?(:search)
@@ -31,8 +26,6 @@ class Book < ApplicationRecord
       title: title
     }
   end
-  class << self
-    delegate :search, to: :Searchkick if self.public_instance_methods.include?(:search)
 
   def to_xls(options = {})
     CSV.generate(options) do |csv|
