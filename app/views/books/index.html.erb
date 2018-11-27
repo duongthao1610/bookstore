@@ -1,14 +1,10 @@
 <% provide(:title, (t ".home_title"))%>
   <div class="post">
-    <h2 class="title"><%=(t ".welcome")%></h2>
+    <h2 class="title">
+      <%=(t ".welcome")%></h2>
     <div class="entry">
       <p>This is <strong> <%=(t ".store")%> </strong></p>
     </div>
-    <% if user_signed_in? %>
-    <button id="delete-button" type="button" class="btn btn-danger">
-      <i class="fa fa-heart"></i><%= link_to (t ".favorite"),
-        user_favorite_books_path(current_user.id) %></button>
-    <% end %>
   </div>
   <%= search_form_for @search, url:search_books_path, method: :post do |f| %>
     <div class="form-group col-md-3">

@@ -10,7 +10,8 @@
       <li class="right_button"><%= link_to (t ".logout_button"), destroy_user_session_path, method: :delete %></li>
     </ul>
     <% else %>
-		<li class="right_button"><%= link_to (t ".login_button"), new_user_session_path  %></li>
+		<li class="right_button"><%= link_to (t ".login_button"),
+      new_user_session_path, id: "login_button"  %></li>
 		<li class="right_button"><%= link_to (t ".signup_button"), signup_path  %></li>
 		<% end %>
 	</div>

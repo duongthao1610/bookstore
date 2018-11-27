@@ -9,12 +9,12 @@ class BooksController < ApplicationController
   end
 
   def index
-    @pagy, @books = pagy Book.order_by_created.filter_by_book_type(params[:category])
-
     @search = Book.ransack(params[:q])
     @pagy, @books = pagy @search.result.includes(:category)
 
-    if params[:search_book]
+    if params[:category]
+      @pagy, @books = pagy Book.order_by_created.filter_by_book_type(params[:category])
+    elsif params[:search_book]
       @pagy, @books = pagy_searchkick(Book.search(params[:search_book],
         {fields: [:title], highlight: true}))
 
