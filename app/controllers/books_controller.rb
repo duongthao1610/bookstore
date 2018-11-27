@@ -10,11 +10,10 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.order_by_created.filter_by_book_type(params[:category])
-      .page(params[:page]).per Settings.book.per_page
+    @pagy, @books = pagy Book.order_by_created.filter_by_book_type(params[:category])
 
       @search = Book.ransack(params[:q])
-      @books = @search.result.includes(:category).page(params[:page]).per Settings.book.per_page
+      @pagy, @books = pagy @search.result.includes(:category)
     if params[:term]
       @search = Book.ransack(title_cont: params[:term], category_name_eq: params[:q][:category_name_eq])
       @books = @search.result.includes(:category)

@@ -2,7 +2,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable
   devise :omniauthable, omniauth_providers: %i(google_oauth2)
-  scope :created_at, -> {order created_at: :desc}
+  scope :order_by_created_at, -> {order created_at: :desc}
   scope :select_users, -> {select :name, :dob, :email, :address, :avatar, :id}
   scope :order_by_dob, -> {order :dob}
   has_many :comments, dependent: :destroy

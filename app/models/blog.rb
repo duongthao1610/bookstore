@@ -11,5 +11,6 @@ class Blog < ApplicationRecord
   def should_generate_new_friendly_id?
     title_changed? || super
   end
-
+  scope :select_blog, ->{select :id, :title, :date, :author, :auth_link, :description}
+  scope :order_by_created, ->{order created_at: :desc}
 end

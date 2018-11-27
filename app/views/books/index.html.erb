@@ -6,13 +6,13 @@
   </div>
 </div>
 
-  <div class="all-book row">
-    <% if params[:search_book] %>
-      <%= render "search_results" %>
-    <% else %>
-      <%= render @books %>
-    <% end %>
-  </div>
-  <div class="paginate-book">
-    <%= paginate @books, theme: "twitter-bootstrap-3" %>
-  </div>
+<div class="all-book row">
+  <% if params[:search_book] %>
+    <%= render "search_results" %>
+  <% else %>
+    <%= render @books %>
+  <% end %>
+</div>
+<div class="paginate-book">
+  <%== pagy_nav_bootstrap(@pagy) %>
+</div>
