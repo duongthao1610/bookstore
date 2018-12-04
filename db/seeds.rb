@@ -1,78 +1,112 @@
-Category.create!  name: "Science fiction",
-                  description: "Science fiction book"
-Category.create!  name: "Psychology",
-                  description: "Psychology book"
-Category.create!  name: "Comics",
-                  description: "Comics book"
-Category.create!  name: "Romance",
-                  description: "Romance book"
-Category.create!  name: "Mystery",
-                  description: "Mystery book"
+Category.create!  name: "Make up",
+                  description: "Make up Cosmetic"
+Category.create!  name: "Cleansing",
+                  description: "Cleansing Cosmetic"
+Category.create!  name: "Body",
+                  description: "Body Cosmetic"
+Category.create!  name: "Hair",
+                  description: "Hair Cosmetic"
+Category.create!  name: "For men",
+                  description: "For men Cosmetic"
+Trademark.create! name: "Skin food",
+                  country: "Korea"
+Trademark.create! name: "The body shop",
+                  country: "Korea"
+Trademark.create! name: "Dior",
+                  country: "USA"
+Trademark.create! name: "Muji",
+                  country: "Japan"
+Trademark.create! name: "Sanoflore",
+                  country: "France"
 
-Book.create!(title:  "Tokyo Hoàng Đạo Án",
-             id: "1",
-             publisher: "Nhã Nam",
+Cosmetic.create!(name:  "Kẻ Mắt Isehan Kiss",
              price: 160000,
              quantity_in_store: "6",
-             image: Rails.root.join("app/assets/images/kyoto.jpg").open,
+             image: Rails.root.join("app/assets/images/kemat.jpg").open,
              category_id: "1",
-             description: "Theo chân Lôi Mễ đi qua 2 cuốn tiểu thuyết, khả năng phân tích phán đoán tâm lý của mình cũng có tiến bộ đôi chút. Phải nói rằng, lúc đầu, có quá nhiều chi tiết, có quá nhiều nhân vật và mình không thể xâu chuỗi và tìm ra thủ phạm. Suy nghĩ cả buổi chiều, cuối cùng, suy đoán của mình cũng đúng.Khi tấm màn bí mật lộ ra, mình thật sự thật sự hạnh phúc và vui mừng. Không phải mừng vì truyện hay và vui mừng vì khả năng phán đoán ban đầu của mình rất chính xác. ")
+             trademark_id: "2",
+             description: "Dễ kẻ lắm đó nên các bạn có thể sắm em ấy về để tập kẻ mắt nhé, em có màu đen và mực ra rất đều luôn nha.")
 
-Book.create!(title:  "Phía sau nghi can X",
-             id: "2",
-             publisher: "Nhã Nam",
+Cosmetic.create!(name:  "Phấn Nền 4 Trong 1 L’Oreal",
              price: 190000,
-             quantity_in_store: "2",
-              image: Rails.root.join("app/assets/images/book2.jpg").open,
-             category_id: "2",
-             description: "Việc Togashi đột ngột xuất hiện sau 5 năm li dị đã thay đổi cuộc đời Yasuki hoàn toàn, gã đeo bám chị không dứt, buổi tối định mệnh đó sau một hồi giằng co chị vô tình giết Togashi. ")
+             quantity_in_store: "10",
+              image: Rails.root.join("app/assets/images/phannen1.png").open,
+             category_id: "1",
+             trademark_id: "1",
+             description: "Phấn nền 4 trong 1 L’Oreal True Match Genius là sản phẩm phấn nén dạng kem đầu tiên trên thị trường với 4 công dụng chỉ trong 1 sản phẩm, cho lớp trang điểm mịn mượt ngay lập tức. Sản phẩm che khuyết điểm hoàn hảo mang lại lớp nền đẹp tự nhiên. Hãy trải nghiệm một diện mạo hoàn toàn mới với phấn nền 4 trong 1 L’Oreal True Match Genius.")
 
-Book.create!(title:  "Bạch Dạ Hành",
-             id: "3",
-             publisher: "Nhã Nam",
+Cosmetic.create!(name: "Sữa Rửa Mặt DHC",
              price: 190000,
              quantity_in_store: "3",
-             image: Rails.root.join("app/assets/images/book4.jpg").open,
-             category_id: "3",
-             description: "Việc Togashi đột ngột xuất hiện sau 5 năm li dị đã thay đổi cuộc đời Yasuki hoàn toàn, gã đeo bám chị không dứt, buổi tối định mệnh đó sau một hồi giằng co chị vô tình giết Togashi. ")
+             image: Rails.root.join("app/assets/images/srm1.png").open,
+             category_id: "2",
+             trademark_id: "4",
+             description: "Sữa Rửa Mặt DHC Acne Control Medicated 130g dạng kem sẽ đem lại cảm giác thoải mái cho làn da khi dùng mà không gây khô căng.
 
-Book.create!(title:  "Đứa trẻ hư",
-             id: "4",
-             publisher: "Nhã Nam",
+                Và trong sữa rửa mặt còn có chứa hoạt chất trị mụn – Isopropyl Methylphenol. Tiêu diệt và ngăn chăn sự xuất hiện của vi khuẩn mụn ngay từ bước làm sạch.")
+
+Cosmetic.create!(name: "Dầu Gội L’oreal Paris",
              price: 190000,
              quantity_in_store: "4",
-             image: Rails.root.join("app/assets/images/book5.jpg").open,
+             image: Rails.root.join("app/assets/images/dg1.png").open,
              category_id: "4",
-             description: "Việc Togashi đột ngột xuất hiện sau 5 năm li dị đã thay đổi cuộc đời Yasuki hoàn toàn, gã đeo bám chị không dứt, buổi tối định mệnh đó sau một hồi giằng co chị vô tình giết Togashi. ")
+             trademark_id: "5",
+             description: "Dầu gội với công thức giàu dưỡng chất nuôi dưỡng vượt trội cùng màng lọc tia UV giúp bảo vệ tóc khỏi tia UVA, UVB và những tác nhân gây hại bên ngoài cho tóc mềm mượt hơn trông thấy.")
 
-Book.create!(title:  "Bill Gates: Tham Vọng Lớn Lao Và Phía Quá Trình Hình Thành Đế Chế Microsoft (Tái Bản 2017)",
-             id: "5",
-             publisher: "Nhã Nam",
+Cosmetic.create!(name: "Dưỡng Thể Tẩy Tế Bào Chết Paula’s Choice ",
              price: 190000,
              quantity_in_store: "5",
-             image: Rails.root.join("app/assets/images/book6.jpg").open,
-             category_id: "5",
-             description: "Việc Togashi đột ngột xuất hiện sau 5 năm li dị đã thay đổi cuộc đời Yasuki hoàn toàn, gã đeo bám chị không dứt, buổi tối định mệnh đó sau một hồi giằng co chị vô tình giết Togashi. ")
+             image: Rails.root.join("app/assets/images/body1.png").open,
+             category_id: "3",
+             trademark_id: "4",
+             description: "Một sản phẩm kết hợp dưỡng ẩm và tẩy da chết dạng hóa học lưu lại trên da, giúp nuôi dưỡng làn da cơ thể mềm mại, mịn màng, làm sáng tone da và ngăn ngừa viêm lỗ chân lông. Sản phẩm có kết cấu kem lỏng, dễ bôi, thấm cực nhanh được mệnh danh là một trong những Body Lotion đáng sử dụng nhất.")
 
-Book.create!(title:  "Steve Jobs - Những Bí Quyết Đổi Mới Và Sáng Tạo (Tái Bản 2017)",
-             id: "6",
-             publisher: "Nhã Nam",
+Cosmetic.create!(name: "Viên uống chống nắng nội sinh Murad",
              price: 190000,
              quantity_in_store: "6",
-             image: Rails.root.join("app/assets/images/book11.jpg").open,
+             image: Rails.root.join("app/assets/images/formen1.jpg").open,
+             category_id: "5",
+             trademark_id: "3",
+             description: "Việc bổ sung viên uống chống nắng sẽ giúp chúng mình không chỉ bảo vệ da trọn vẹn 100% khỏi nắng, bảo vệ tế bào từ trong ra ngoài và đặc biệt còn sửa chữa hư tổn và kéo dài tuổi thọ tế bào.")
+Cosmetic.create!(name: "Set Son Kem YSL Mini 3 Cây",
+             price: 360000,
+             quantity_in_store: "10",
+             image: Rails.root.join("app/assets/images/son2.jpg").open,
              category_id: "1",
-             description: "Việc Togashi đột ngột xuất hiện sau 6 năm li dị đã thay đổi cuộc đời Yasuki hoàn toàn, gã đeo bám chị không dứt, buổi tối định mệnh đó sau một hồi giằng co chị vô tình giết Togashi. ")
+             trademark_id: "5",
+             description: "Chất son kem nhẹ, mềm mượt. Độ lên màu cực chuẩn và bám màu tốt trong nhiều giờ. Làm căng đầy những rãnh môi khô nứt.")
+Cosmetic.create!(name: "Son Iris",
+             price: 200000,
+             quantity_in_store: "10",
+             image: Rails.root.join("app/assets/images/son1.jpg").open,
+             category_id: "1",
+             trademark_id: "3",
+             description: "Chất son kem nhẹ, mềm mượt. Độ lên màu cực chuẩn và bám màu tốt trong nhiều giờ. Làm căng đầy những rãnh môi khô nứt.")
+Cosmetic.create!(name: "Sữa Rửa Mặt Biore Face Wash",
+             price: 200000,
+             quantity_in_store: "10",
+             image: Rails.root.join("app/assets/images/srm2.jpg").open,
+             category_id: "2",
+             trademark_id: "1",
+             description: "Phải công nhận, chưa bao giờ các dòng Sữa Rửa Mặt Biore Face Wash ngừng hot. Bởi đến với Biore, là chúng mình đến với 1 thế giới “đủ đầy” từ A-Z các nhu cầu cần có với mức giá cực “yêu thương”.")
+Cosmetic.create!(name: "Kem Nhuộm Tóc L’Oreal Paris",
+             price: 400000,
+             quantity_in_store: "10",
+             image: Rails.root.join("app/assets/images/nhuomtoc1.png").open,
+             category_id: "4",
+             trademark_id: "5",
+             description: "Công dụng: cho màu sắc tự nhiên mà vẫn bảo vệ tóc mềm mượt sau khi nhuộm.")
 
-7.upto(25) do |n|
-  title = "Book #{n}"
-  publisher = "Publisher-#{n+1}"
-  des = "Book-#{n} description"
-  Book.create!(title: title,
-             publisher: "Nhã Nam",
+
+11.upto(30) do |n|
+  title = "Cosmetic #{n}"
+  des = "Cosmetic-#{n} description"
+  Cosmetic.create!(name: title,
              price: 190000,
              quantity_in_store: rand(1..10),
-             image: Rails.root.join("app/assets/images/book#{n}.jpg").open,
+             image: Rails.root.join("app/assets/images/cosmetic#{n}.jpg").open,
              category_id: rand(1..5),
+             trademark_id: rand(1..5),
              description: des)
 end
 
@@ -117,33 +151,30 @@ User.create! name: "Admin2",
              role: 1,
              payment_id: 1
 
-10.times do |n|
-  name = FFaker::Name.name
-  birthday = "10/10/1960"
-  Author.create! name: name,
-                 birthday: birthday
+
+Place.create! name: 'Cosmeticstore', description: 'Cơ sở 1', latitude: '21.022983', longitude: '105.807902'
+
+Place.create! name: 'CosmeticStore', description: 'Cơ sở 2', latitude: "35.7100627", longitude: '139.8085117'
+
+25.times do |n, id|
+  id = rand(1..10)
+  Blog.create!  title: "Blog#{n+1} ve cuon sach cuc ky hay",
+                description: "Blog#{n+1} : Nếu đã từng, bạn có nhớ tới những nỗi ám ảnh thời đại học luôn giày vò anh chàng Phương Mộc nhân vật chính “Đề Thi Đẫm Máu? Cái chết của cô bạn gái Trần Hy?? Vụ cháy của căn phòng ký túc 352?? Tất cả những quá khứ đó sẽ được bày mở trong cuốn tiểu thuyết",
+                auth_link: "https://www.railstutorial.org/book/advanced_login",
+                body: "Blog#{n+1} : Nếu đã từng, bạn có nhớ tới những nỗi ám ảnh thời đại học luôn giày vò anh chàng Phương Mộc nhân vật chính “Đề Thi Đẫm Máu? Cái chết của cô bạn gái Trần Hy?? Vụ cháy của căn phòng ký túc 352?? Tất cả những quá khứ đó sẽ được bày mở trong cuốn tiểu thuyết",
+                user_id: id,
+                author: User.find_by(id: id).name,
+                date: Time.current
 end
 
-15.times do |n|
-  AuthorBook.create!(book_id: n+1, author_id: rand(1..10))
-end
-
-
-10.times do |n|
-  name = FFaker::Name.name
-  birthday = "10/10/1960"
-  Author.create! name: name,
-                 birthday: birthday
-end
-
-15.times do |n|
-  AuthorBook.create!(book_id: n+1, author_id: rand(1..10))
+9.times do |n|
+ User.find_by(id: n+1).like(Cosmetic.find_by id: 17)
 end
 
 10.times do |n|
-  AuthorBook.create!(book_id: n+10, author_id: rand(1..10))
+ User.find_by(id: n+1).like(Cosmetic.find_by id: 16)
 end
 
-Place.create! name: 'HTbookstore', description: 'HTbookstore chỉ có Hiếu là chăm chỉ bán sách, còn Thảo thì không', latitude: '21.022983', longitude: '105.807902'
-
-Place.create! name: 'HTbookstore', description: 'HTbookstore chỉ có Hiếu là chăm chỉ bán sách, còn Thảo thì không', latitude: "35.7100627", longitude: '139.8085117'
+11.times do |n|
+ User.find_by(id: n+1).like(Cosmetic.find_by id: 1)
+end

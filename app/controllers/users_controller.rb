@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @pagy, @books = pagy @user.favorite_books
+    @pagy, @cosmetics = pagy @user.favorite_cosmetics
   end
 
   private

@@ -16,7 +16,7 @@
       <div class="panel-body">
         <%= comment.content %>
         <% if current_user?(comment.user) %>
-        <%= link_to t(".delete"), book_comment_path(@book, comment),
+        <%= link_to t(".delete"), cosmetic_comment_path(@cosmetic, comment),
           method: :delete, data: {confirm: I18n.t("comments.destroy.sure")},
             remote: true, class: "delete-comment" %>
         <% end %>

@@ -1,0 +1,13 @@
+<div class="card-cosmetic h-100 col-lg-8">
+  <%= link_to image_tag(owl_cosmetic.image.url, alt: t(".alt"), size: Settings.cosmetics.show.sizes), cosmetic_path(owl_cosmetic)%>
+  <div class="card-body">
+    <h4 class="card-title">
+      <%= link_to owl_cosmetic.name, cosmetic_path(owl_cosmetic) %>
+    </h4>
+      <h5><%= number_to_currency owl_cosmetic.price, locale: :vi %></h5>
+    </div>
+  <div class="card-footer">
+    <%= link_to owl_cosmetic.users_liked.count.to_s << (t ".liked") , cosmetic_path(owl_cosmetic), method: :get %>
+   <div class="row"> <%= render "blogs/share_button", object: owl_cosmetic %> </div>
+  </div>
+</div>

@@ -14,9 +14,13 @@
       new_user_session_path, id: "login_button"  %></li>
     <li class="right_button"><%= link_to (t ".signup_button"), signup_path  %></li>
     <% end %>
-    <li><%= render "layouts/search" %></li>
+    <li class="right_button"><%= render "layouts/search" %></li>
     </ul>
   </div>
+</div>
+<div class="language">
+  <%= link_to "English", locale:"en" %>
+  <%= link_to "Vietnamese", locale:"vi" %>
 </div>
 
 <div class="row">
@@ -42,13 +46,13 @@
     </ol>
     <div class="carousel-inner">
       <div class="item active">
-        <%= image_tag( t(".book"), size: Settings.header.size , alt: t(".alt") ) %>
+        <%= image_tag( t(".cosmetic"), size: Settings.header.size , alt: t(".alt") ) %>
       </div>
       <div class="item">
-        <%= image_tag( t(".bdh"), size: Settings.header.size , alt: t(".alt") ) %>
+        <%= image_tag( t(".banner1"), size: Settings.header.size , alt: t(".alt") ) %>
       </div>
       <div class="item">
-        <%= image_tag( t(".anhsang"), size: Settings.header.size , alt: t(".alt") ) %>
+        <%= image_tag( t(".banner3"), size: Settings.header.size , alt: t(".alt") ) %>
       </div>
     </div>
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">

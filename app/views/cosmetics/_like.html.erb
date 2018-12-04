@@ -1,0 +1,5 @@
+<%= form_for(current_user.likes_for_cosmetic.build, remote: true) do |f| %>
+  <div><%= hidden_field_tag :cosmetic_id, @cosmetic.id %></div>
+  <%= f.submit "Like" , class: "btn btn-outline-dark" %>
+  <button id="btn-user-like" type="button" class="btn btn-default" ><%= @cosmetic.users_liked.count.to_s << (t ".liked") %></button>
+<% end %>

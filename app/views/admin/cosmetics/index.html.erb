@@ -1,0 +1,46 @@
+<% provide :title, t(".allcosmetic") %>
+<h1><%= t ".allcosmetic" %></h1>
+<div>
+  <%= form_tag(admin_cosmetics_path, method: :get, remote: true) do %>
+  <div class="row">
+    <div class="form-group col-xs-6 col-md-4">
+      <%= text_field_tag :search, params[:search], class: "form-control",
+      placeholder: t(".search_name") %>
+    </div>
+      <%= submit_tag t(".search"), class: "btn btn-primary btn-search-cosmetic" %>
+      <%= link_to "Add cosmetic", new_admin_cosmetic_path, class: "btn btn-primary btn-add-cosmetic" %>
+  </div>
+  <% end %>
+  <div id="cosmetics-table">
+    <table class="table table-hover bg-table ls-cosmetics">
+      <thead class="title_table">
+        <tr>
+          <th class="text-c"><%= t ".index" %></th>
+          <th class="text-c"><%= t ".image" %></th>
+          <th class="text-c"><%= t ".name" %></th>
+          <th class="text-c"><%= t ".trademark" %></th>
+          <th class="text-c"><%= t ".category" %></th>
+          <th class="text-c"><%= t ".price" %></th>
+          <th class="text-c"><%= t ".quantity" %></th>
+          <th class="text-c"><%= t ".description" %></th>
+          <th class="text-c"><%= t ".delete" %></th>
+          <th class="text-c"><%= t ".update" %></th>
+        </tr>
+      </thead>
+      <tbody class="result-search">
+        <%= render "results" %>
+      </tbody>
+    </table>
+  </div>
+
+    <div class="container">
+    <p>
+      <%= t ".download" %>
+      <%= link_to t(".export_excel"), admin_xmls_path(format: "xls") %>
+    </p>
+  </div>
+
+  <div class="paginator">
+    <%== pagy_nav_bootstrap(@pagy) %>
+  </div>
+</div>

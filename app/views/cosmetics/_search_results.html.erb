@@ -1,0 +1,17 @@
+<% @cosmetics.with_highlights.each do |cosmetic, highlights| %>
+  <div class="col-lg-4 col-md-4 mb-4">
+    <div class="card-cosmetic h-100">
+      <%= link_to image_tag(cosmetic.image.url , alt: t(".alt"), size: Settings.cosmetics.show.sizes),
+        controller: "cosmetics", action: "show", id: cosmetic.id%>
+      <div class="card-body">
+        <h4 class="card-title">
+          <%= link_to highlights[:name].html_safe, cosmetic_path(cosmetic) %>
+        </h4>
+        <h5><%= number_to_currency(cosmetic.price, :locale => :vi) %></h5>
+      </div>
+      <div class="card-footer">
+        <%= link_to cosmetic.users_liked.count.to_s << (t ".liked") , cosmetic_path(cosmetic), method: :get %>
+      </div>
+    </div>
+  </div>
+<% end %>

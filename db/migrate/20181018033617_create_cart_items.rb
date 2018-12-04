@@ -4,11 +4,11 @@ class CreateCartItems < ActiveRecord::Migration[5.2]
       t.integer :quantity
       t.float :paideach
       t.integer :cart_id
-      t.integer :book_id
+      t.integer :cosmetic_id
       t.timestamps
     end
     add_index :cart_items, :cart_id
-    add_index :cart_items, :book_id
-    add_index :cart_items, [:cart_id, :book_id], unique: true
+    add_index :cart_items, :cosmetic_id
+    add_index :cart_items, [:cart_id, :cosmetic_id], unique: true
   end
 end

@@ -1,0 +1,38 @@
+<% provide(:title, (t ".home_title"))%>
+<% if params[:category] %>
+  <div class="kenh14-border" id="blog-title" >
+    <h1><%= params[:category] %></h1>
+  </div>
+<% else %>
+  <h2 class="title"><%=(t ".welcome")%></h2>
+  <div class="entry">
+    <p>This is <strong> <%=(t ".store")%> </strong></p>
+  </div>
+<% end %>
+<%= search_form_for @search, url:search_cosmetics_path, method: :post do |f| %>
+  <div class="form-group col-md-3">
+    <%= f.label :name_cont, class: "form-label" %>
+    <%= f.text_field :name_cont %>
+  </div>
+  <div class="form-group col-md-3">
+    <%= f.label :price_lt, class: "form-label" %>
+    <%= f.text_field :price_lt %>
+  </div>
+  <div class="form-group col-md-3">
+    <%= f.label :Category, class: "form-label"%>
+    <%= f.select :category_name_eq, options_from_collection_for_select(@categories,
+      :name, :name, @search.category_name_eq), {:include_blank => true},
+        :class => "form-control" %>
+  </div>
+  <%= f.button (fa_icon (t".filter")) , class: "btn-default btn-filter" %>
+<% end %>
+<div class="all-cosmetic row">
+  <% if params[:search_cosmetic] %>
+    <%= render "search_results" %>
+  <% else %>
+    <%= render @cosmetics %>
+  <% end %>
+</div>
+<div class="paginate-cosmetic">
+  <%== pagy_nav_bootstrap(@pagy) %>
+</div>

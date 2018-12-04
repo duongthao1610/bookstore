@@ -6,8 +6,8 @@ user:
   min_password_size: 6
   avatar_profile: 200
 
-book:
-  book_size: 130x150
+cosmetic:
+  cosmetic_size: 130x150
   per_page: 24
 
 blogs:
@@ -16,7 +16,7 @@ blogs:
   per_page: 24
 
 admin:
-  book:
+  cosmetic:
     image_size: 50
     page_index: 1
     per_page: 20
@@ -24,7 +24,7 @@ admin:
     size: "120x140"
   user:
     per_page: 24
-books:
+cosmetics:
   show:
     sizel: 200x250
     sizes: 130x140

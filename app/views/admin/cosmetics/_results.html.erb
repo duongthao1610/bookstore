@@ -1,0 +1,21 @@
+<% @cosmetics.each.with_index do |cosmetic, index| %>
+  <tr>
+    <td class="text-c">
+      <% params[:page] ||= Settings.admin.cosmetic.page_index %>
+      <%= index_for params[:page], index, Settings.cosmetic.per_page %>
+    </td>
+    <td class="text-c"><%= image_tag cosmetic.image.url, size: Settings.admin.cosmetic.image_size %> </td>
+    <td class="text-c"><%= cosmetic.name %></td>
+    <td class="text-c"><%= cosmetic.trademark.name << "-" << cosmetic.trademark.country %>
+    <td class="text-c"><%= cosmetic.category.name %></td>
+    <td class="text-c"><%= cosmetic.price %></td>
+    <td class="text-c"><%= cosmetic.quantity_in_store %></td>
+    <td class="text-c"><%= cosmetic.description %></td>
+    <td class="text-c">
+      <%= link_to raw("<span class='glyphicon glyphicon-trash
+            text-danger'></span>"), [:admin, cosmetic], method: :delete,
+            data: {confirm: t(".confirm_delete")} %>
+    </td>
+    <td class="text-c"><%= link_to t(".update"), edit_admin_cosmetic_path(cosmetic) %></td>
+  </tr>
+<% end %>

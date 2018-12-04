@@ -1,0 +1,45 @@
+<% provide(:title, @cosmetic.name )%>
+<div class="kenh14-border" id="blog-title" >
+<h1><%=(t ".cosmetic_details")%></h1>
+</div>
+<div class="container">
+<div class="row">
+<div class="card-cosmetic show-cosmetic"><%= link_to image_tag(@cosmetic.image.url , alt: t(".alt") , size: Settings.cosmetics.show.sizel ) %>
+  <div class="card-footer">
+    <div class="row">
+      <div class="col-lg-5">
+       <%= render "like_form" if user_signed_in? %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-lg-5" id="cosmetic-card-wrap" >
+  <div class="section" >
+    <h1><%= @cosmetic.name %></h1>
+     </div>
+      <div class="section" ><h4><%= number_to_currency @cosmetic.price, locale: :vi %></h4></div>
+        <div class="section" >
+          <% if user_signed_in? %>
+           <%= form_for @cart_item, remote: true do |f| %>
+             <%= f.number_field :quantity, min: 1, max: @cosmetic.quantity_in_store %>
+             <%= f.hidden_field :paideach, value: @cosmetic.price %>
+             <%= f.hidden_field :user_id, value: current_user.id %>
+             <%= f.hidden_field :cosmetic_id, value: @cosmetic.id %>
+             <%= f.submit (t".cart"), class: "btn btn-success" %>
+           <% end %>
+          <% end %>
+        </div>
+        <p><%= @cosmetic.description %></p>
+        <% if user_signed_in? %>
+        <div class="row">
+          <div class="field-comment">
+            <%= render "comments/form" %>
+          </div>
+        </div>
+        <% end %>
+        <div class="col s12 m8 offset-m2 l6 offset-l0 all-comment">
+          <%= render partial: "comments/comment", collection: @comments %>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -7,3 +7,330 @@ vi:
         separator: "."
         precision: 0
         format: "%n %u"
+
+  require_login:
+    please_login: "Vui lòng đăng nhập tài khoản của bạn"
+
+  shared:
+    error_messages:
+      the_form: "Biểu mẫu gồm: "
+      error: "error"
+
+  cart_items:
+    index:
+      cart: "giỏ hàng"
+      time: "times"
+      money: "tiền"
+      title: "Giỏ hàng của bạn"
+      checkout: "Thanh toán"
+      add: "Thêm sản phẩm"
+      delete_all: "Xóa tất cả"
+      delete_item: "Xóa sản phẩm"
+      update_button: "Sửa"
+    cart:
+      total: "Tổng tiền: %{vnd} "
+    create:
+      add: "Sản phẩm đã đưọc thêm vào giỏ hàng"
+      update: "Số lượng sản phẩm đưọc cập nhật"
+    destroy:
+      success: "Xóa sản phẩm khỏi giỏ hàng thành công"
+  orders:
+    order_item:
+      cart: "giỏ hàng"
+      time: "times"
+      money: "tiền"
+      title: "giỏ hàng của bạn"
+      checkout: "Thanh toán"
+      add: "Thêm sản phẩm"
+      total: "Tổng tiền: %{vnd} "
+    order_form:
+      updated_full: "Thông tin chi tiết đã đưọc cập nhật, thực hiện tiếp bước 2"
+    show:
+      title: "Đơn hàng -"
+      customer: "Thông tin khách hàng: "
+      order_items: "Chi tiết sản phẩm đã đặt: "
+      name: "Tên: "
+      dob: "Ngày sinh: "
+      phone_number: "Số điện thoại: "
+      date: "Ngày tạo đơn: "
+      address: "Địa chỉ nhận hàng: "
+      payment: "Hình thức thanh toán: hình thức thanh toán "
+      total: "Tổng tiền phải trả: "
+    new:
+      none_item: "Giỏ hàng của bạn đang trống! Thêm sản phẩm vào giỏ hàng"
+      order_title: "Đơn hàng của bạn"
+      update_button: "Tạo đơn hàng này"
+      order_detail: "Vui lòng cập nhật thông tin cá nhân của bạn : "
+      updated_success: "Cập nhật thông tin cá nhân thành công!. Tiếp tục bước 2."
+      step_1: "Chúng tôi sẽ sử dụng thông tin của bạn gồm tên, số điện thoại và địa chỉ cho đơn hàng này. Hãy chắc chắn rằng chúng đưọc cập nhật đầy đủ và chính xác! "
+      required: "Nếu yêu cầu cập nhật thông tin hoàn thành, vui lòng thực hiện bưóc 2"
+      step_2: "Bước 2: Tạo đơn hàng!"
+      user_button: "Cập nhật thông tin cá nhân"
+    create:
+      updated_success: "Cập nhật thông tin cá nhân thành công!"
+      order_success: "Tạo đơn hàng thành công! "
+      pls_update: "Vui lòng cập nhật đầy đủ thông tin!"
+    index:
+      id: "STT"
+      title: "Tên"
+      order: "Đơn hàng # "
+      date: "Ngày tạo"
+      order_title: "Lịch sử đơn hàng"
+  users:
+    user_not_found: "Không tìm thấy user!"
+    please_login: "Vui lòng đăng nhập!"
+    create:
+      created_sucess: "Tạo tài khoản thành công!"
+      create_failed: "Lỗi, thử lại!"
+    new:
+      create_button: "Tạo tài khoản"
+      signup_title: "Đăng kí"
+
+    edit:
+      update_title: "Cập nhật thông tin cá nhân"
+      update_button: "Cập nhật"
+      update_profile: "Cập nhật"
+
+    update:
+      updated_success: "Cập nhật thông tin cá nhân thành công!"
+      pls_update: "Vui lòng cập nhật đầy đủ thông tin!"
+
+    index:
+      size: "120x140"
+      alt: "Không hiển thị"
+
+    show:
+      name: "Tên: "
+      email: "Email: "
+      birthday: "Ngày sinh: "
+      phone: "SĐT: "
+      address: "Địa chỉ: "
+      update_button: "Cập nhật"
+      my_profile: "Thông tin cá nhân"
+      time_default: "%d/%m/%Y"
+
+  sessions:
+    new:
+      login_title: "Đăng nhập"
+      login: "Đăng nhập"
+      log_in_button: "Đăng nhập"
+      new_user: "Tài khoản mới?"
+      signup_now: "Đăng ký tài khoản!"
+      remember_me: "Ghi nhớ tài khoản!"
+    create:
+      require_login: "email/ mật khẩu không hợp lệ!"
+
+    update:
+      updated_success: "Tài khoản cập nhật thành công!"
+
+    show:
+      name: "Tên: "
+      email: "Email: "
+      birthday: "Ngày sinh: "
+      phone: "SĐT: "
+      address: "Địa chỉ: "
+      update_button: "Cập nhật"
+      my_profile: "Thông tin cá nhân"
+      time_default: "%d/%m/%Y"
+
+  admin:
+    cosmetics:
+      cosmetic_not_found: "Sản phẩm không tồn tại!"
+      index:
+        allcosmetic: "Tất cả sản phẩm"
+        index: "STT"
+        image: "Ảnh"
+        title: "Tên"
+        category: "Loại"
+        price: "Giá"
+        quantity: "Số lượng"
+        description: "Mô tả"
+        delete: "Xóa"
+        update: "Sửa"
+        search_name: "Tìm kiếm theo tên"
+        search: "Tìm kiếm"
+        confirm_delete: "Bạn có chắc?"
+        download: "Tải về"
+        export_excel: "Xuất ra excel"
+      destroy:
+        delete_success: "Xóa sản phẩm thành công"
+        deleted_fail: "Xóa sản phẩm không thành công"
+      results:
+        confirm_delete: "Bạn có chắc?"
+      new:
+        addcosmetic: "Thêm mới"
+        save: "Lưu"
+      create:
+        created_success: "Tạo sản phẩm thành công!"
+        created_faild: "Lỗi tạo sản phẩm!"
+      edit:
+        edit_cosmetic: "Sửa sản phẩm"
+        save: "Lưu"
+      update:
+        updated_success: "Cập nhật sản phẩm thành công!"
+        updated_fail: "Lỗi cập nhật sản phẩm!"
+    users:
+      destroy:
+        cant: "Không thể xóa admin"
+        success: "Xóa tài khoản thành công"
+        fail: "Không thể xóa tài khoản"
+      users_table:
+        you_want: "Bạn muốn xóa người dùng: "
+        are_you: ". Chắc chắn?"
+        delete: "Xóa"
+      index:
+        delete: "Xóa"
+        users_title: "Tất cả người dùng"
+
+  static_pages:
+    home:
+      home_title: "Trang chủ"
+      welcome: "Welcome to Cosmeticstore"
+      store: "Cosmeticstore"
+    contact:
+      contact_title: "Liên hệ"
+      location: "Vị trí của chúng tôi: "
+    about:
+      about_title: "Giới thiệu"
+      store_name: "Cosmeticstore"
+      alt_image: "Không hiển thị"
+      about_content: "Chúng ta gặp gỡ với nông dân trên toàn thế giới để đảm bảo chúng tôi chỉ nhận được các thành phần thực phẩm tốt nhất được trồng theo các phương pháp tốt nhất như cà chua, rau diếp và dưa chuột được trồng hữu cơ. Các phương pháp phát triển bền vững và thân thiện với môi trường là một trụ cột cho triết lý của chúng tôi. Các nhóm R & D của chúng tôi thử nghiệm, nghiên cứu và thử nghiệm một số chi tiết để đảm bảo rằng chúng tôi có thể cung cấp các giải pháp chăm sóc da dựa trên thực phẩm mạnh mẽ cho làn da đẹp và khỏe mạnh. Chúng tôi cam kết làm mọi thứ đúng cách, ngay cả khi phải mất lâu hơn một chút. Chúng tôi tập trung vào vẻ đẹp vượt thời gian, không phải trên kết quả ngắn ngủi."
+
+  favorite_cosmetics:
+    index:
+      favorite_cosmetics: "Sản phẩm yêu thích"
+      title: "Sản phẩm yêu thích"
+
+  layouts:
+    modal:
+      title: "Cập nhật thông tin của bạn gồm: tên, email, SĐT, địa chỉ"
+      close: "Đóng"
+    menu_button:
+      your_cart: "Giỏ hàng của bạn"
+      purchase: "Lịch sử đơn hàng"
+      drop: "Dropdown button"
+      favorite: "   Sản phẩm yêu thích của bạn"
+      shop: "Giỏ hàng"
+      cart: "Giỏ hàng"
+
+    header:
+      link_hieu: "https://www.facebook.com/duongphuongthao996"
+      founder: "Phuong Thao"
+      store_name: "Cosmeticstore"
+      home_button: "Trang chủ"
+      about_button: "Giới thiệu"
+      blog_button: "Blog"
+      login_button: "Đăng nhập"
+      contact_button: "Liên hệ"
+      signup_button: "Đăng ký"
+      new_blog: "Viết blog"
+      profile_button: "Profile"
+      logout_button: "Đăng xuất"
+      cart_button: "Giỏ hàng"
+      design: "Design by"
+      size: "1000x400"
+      alt: "Không hiển thị"
+      cosmetic: "banner2.jpg"
+      banner1: "banner1.jpg"
+      banner3: "banner3.jpg"
+      search: "tìm kiếm"
+    footer:
+      content_footer: "2012. Untitled. All rights reserved. Design by"
+      link_hieu: "https://www.facebook.com/duongphuongthao996"
+      founder: "Phuong Thao"
+      store_name: "Cosmeticstore"
+      content_footer: "2018. Untitled. All rights reserved. Design by"
+      photo: ". Photo by "
+    sidebar:
+      search: "Tìm kiếm tại đây:"
+      category: "Loại sản phẩm"
+      makeup: "Trang điểm"
+      cleansing: "Làm sạch"
+      body: "Dưỡng thể"
+      hair: "Tóc"
+      formen: "Dành cho nam"
+
+  blogs:
+    create:
+      created_sucess: "Tạo blog thành công!"
+      create_failed: "Lỗi tạo blog, thử lại!"
+    new:
+      blog_title: "Blog"
+      create_blog: "Viết blog "
+      newblog: "Blog mới: "
+      back: "Trở lại"
+    index:
+      blog_title: "Blog"
+      blog_name: "Cosmetic Blog"
+      read_button: "Xem thêm"
+
+  cosmetics:
+    owl_cosmetic:
+      liked: " users thích sản phẩm"
+    like:
+      liked: " users thích sản phẩm"
+    unlike:
+      liked: " users thích sản phẩm"
+    show:
+      dathang: "Thêm vào giỏ hàng"
+      alt: "Không hiển thị"
+      size: "200x250"
+      cart: "Thêm vào giỏ hàng"
+      cosmetic_details: "Chi tiết sản phẩm"
+    index:
+     home_title: "Trang chủ"
+     welcome: "Welcome to Cosmeticstore"
+     store: "Cosmeticstore"
+     posted_by: "Tạo bởi"
+     this: "Đây là"
+     liked: " users thích sản phẩm"
+     filter: "filter"
+    form:
+      hi: "Blog không đưọc phép lưu: "
+    cosmetic:
+      liked: " User thích sản phẩm"
+    search_results:
+      liked: "  User thích sản phẩm"
+  comments:
+    form:
+      comment: "Bình luận"
+      add_comment: "Bình luận"
+      alert: "Có lỗi xảy ra..."
+    comment:
+      post: "Post"
+      ago: "ago."
+      delete: "Xóa"
+    destroy:
+      sure: "Bạn có chắc?"
+      success: "Comment xóa thành công"
+      failed: "Lỗi xóa comment"
+      sure: "Bạn có chắc?"
+      deleted_fail: "Lỗi!"
+
+  devise:
+    registrations:
+      new:
+        signup: "Đăng ký"
+        characters_minimum: "Số ký tự ít nhất"
+      edit:
+        edit: "Sửa"
+        update: "Cập nhật"
+        current_password_require: "Bạn cần nhập mật khẩu hiện tại để xác nhận thay đổi"
+        confirm: "Bạn có chắc?"
+        cancel_my_account: "Xóa tài khoản"
+        un_happy: "Unhappy?"
+        back: "Trở lại"
+        currently_waiting: "Đang chờ xác nhận:"
+    sessions:
+      new:
+        remember_me: "Ghi nhớ tài khoản!"
+        login: "Đăng nhập"
+    shared:
+      links:
+        login: "Đăng nhập"
+        signup: "Đăng ký"
+        forgot_password: "Quên mật khẩu?"
+        didn't_receive_confirmation: "Không nhận đưọc hướng dẫn xác nhận?"
+        didn't_receive_unlock: "Không nhận được hướng dẫn mở khóa?"
+        sign_in_with: "Đăng nhập bằng %{social}"
+

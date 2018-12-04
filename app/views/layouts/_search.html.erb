@@ -1,10 +1,7 @@
 <div id="search">
-<h2><%=t ".search"%></h2>
-  <%= form_for books_path, method: :get do |f| %>
-    <p>
-      <%= text_field_tag :search_book, params[:search_book], id: "search_book",
-        class: "form-control", placeholder: "Search book by name", data: {autocomplete_source: books_path}%>
-    </p>
+  <%= form_for cosmetics_path, method: :get do |f| %>
+      <%= text_field_tag :search_cosmetic, params[:search_cosmetic], id: "search_cosmetic",
+        class: "form-control", placeholder: "Search cosmetic by name", data: {autocomplete_source: cosmetics_path}%>
   <% end %>
 </div>
 

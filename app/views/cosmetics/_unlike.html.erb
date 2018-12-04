@@ -1,0 +1,4 @@
+<%= form_for(current_user.likes_for_cosmetic.find_by(cosmetic_id: @cosmetic.id), html: { method: :delete }, remote: true) do |f| %>
+    <%= f.submit "Unlike", class: "btn" %>
+    <button id="btn-user-like" type="button" class="btn btn-default" ><%= @cosmetic.users_liked.count.to_s << (t ".liked") %></button>
+<% end %>

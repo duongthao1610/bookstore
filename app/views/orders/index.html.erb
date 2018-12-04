@@ -2,7 +2,7 @@
 <div class="kenh14-border" id="blog-title" >
   <h2><%=(t ".order_title")%></h>
   </div>
-<table class="table table-hover bg-table ls-books">
+<table class="table table-hover bg-table ls-cosmetics">
   <thead class="title_table">
     <tr>
       <th class="text-c"><%= t ".id" %></th>
@@ -14,7 +14,7 @@
   <% @orders.each_with_index do |order, index| %>
     <tr>
       <td class="text-c">
-        <%= index_for params[:page], index, Settings.admin.book.per_page %>
+        <%= index_for params[:page], index, Settings.admin.cosmetic.per_page %>
       </td>
       <td class="text-c"> <%= link_to t(".order") + order.id.to_s, order_path(order) %> </td>
       <td class="text-c"> <%= order.date %> </td>

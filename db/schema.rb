@@ -10,21 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_28_030619) do
-
-  create_table "author_books", force: :cascade do |t|
-    t.integer "book_id"
-    t.integer "author_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "authors", force: :cascade do |t|
-    t.string "name"
-    t.datetime "birthday"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2018_12_04_023844) do
 
   create_table "blogs", force: :cascade do |t|
     t.integer "user_id"
@@ -42,30 +28,17 @@ ActiveRecord::Schema.define(version: 2018_11_28_030619) do
     t.index ["user_id"], name: "index_blogs_on_user_id"
   end
 
-  create_table "books", force: :cascade do |t|
-    t.string "title"
-    t.string "publisher"
-    t.float "price"
-    t.integer "quantity_in_store"
-    t.string "image"
-    t.text "description"
-    t.integer "category_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "like", default: 0
-  end
-
   create_table "cart_items", force: :cascade do |t|
     t.integer "quantity"
     t.float "paideach"
     t.integer "cart_id"
-    t.integer "book_id"
+    t.integer "cosmetic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.index ["book_id"], name: "index_cart_items_on_book_id"
-    t.index ["cart_id", "book_id"], name: "index_cart_items_on_cart_id_and_book_id", unique: true
+    t.index ["cart_id", "cosmetic_id"], name: "index_cart_items_on_cart_id_and_cosmetic_id", unique: true
     t.index ["cart_id"], name: "index_cart_items_on_cart_id"
+    t.index ["cosmetic_id"], name: "index_cart_items_on_cosmetic_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -90,20 +63,33 @@ ActiveRecord::Schema.define(version: 2018_11_28_030619) do
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.integer "user_id"
-    t.integer "book_id"
+    t.integer "cosmetic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "cosmetics", force: :cascade do |t|
+    t.string "name"
+    t.float "price"
+    t.integer "quantity_in_store"
+    t.string "image"
+    t.text "description"
+    t.integer "category_id"
+    t.integer "trademark_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "like", default: 0
   end
 
   create_table "emotions", force: :cascade do |t|
     t.boolean "like"
     t.boolean "dislike"
     t.integer "user_id"
-    t.integer "book_id"
+    t.integer "cosmetic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["book_id"], name: "index_emotions_on_book_id"
-    t.index ["user_id", "book_id"], name: "index_emotions_on_user_id_and_book_id", unique: true
+    t.index ["cosmetic_id"], name: "index_emotions_on_cosmetic_id"
+    t.index ["user_id", "cosmetic_id"], name: "index_emotions_on_user_id_and_cosmetic_id", unique: true
     t.index ["user_id"], name: "index_emotions_on_user_id"
   end
 
@@ -140,6 +126,13 @@ ActiveRecord::Schema.define(version: 2018_11_28_030619) do
   create_table "relationships", force: :cascade do |t|
     t.integer "followed_id"
     t.integer "follower_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "trademarks", force: :cascade do |t|
+    t.string "name"
+    t.string "country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

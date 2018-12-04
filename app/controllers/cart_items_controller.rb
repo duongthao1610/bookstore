@@ -17,7 +17,7 @@ class CartItemsController < ApplicationController
 
   def create
     @cart_item = CartItem.new cart_item_params
-    @item = CartItem.find_by book_id: cart_item_params[:book_id]
+    @item = CartItem.find_by cosmetic_id: cart_item_params[:cosmetic_id]
     if @item
       @item.update_attributes cart_item_params
       flash[:success] = t ".update"
@@ -26,7 +26,7 @@ class CartItemsController < ApplicationController
       flash[:success] = t ".add"
     end
     respond_to do |format|
-      format.html { redirect_to book_path(@book) }
+      format.html { redirect_to cosmetic_path(@cosmetic) }
       format.js
     end
   end
@@ -34,6 +34,6 @@ class CartItemsController < ApplicationController
   private
 
   def cart_item_params
-    params.require(:cart_item).permit :book_id, :user_id, :quantity, :paideach
+    params.require(:cart_item).permit :cosmetic_id, :user_id, :quantity, :paideach
   end
 end

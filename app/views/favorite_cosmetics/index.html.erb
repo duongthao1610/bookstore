@@ -1,0 +1,8 @@
+<% provide(:title, (t ".title"))%>
+<div class="kenh14-border" id="blog-title" >
+<h1><%=(t ".favorite_cosmetics")%></h1>
+</div>
+<div class="row">
+<%= render @cosmetics %>
+</div>
+<%== pagy_nav_bootstrap(@pagy) %>

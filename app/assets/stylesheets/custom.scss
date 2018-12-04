@@ -108,7 +108,7 @@ a {
   padding: 0;
   }
   h1 {
-  margin: 0px;
+  margin: 0;
   padding: 0px;
   font-size: 45px;
   color: $night-rider;
@@ -118,7 +118,7 @@ a {
   }
 }
 .kenh14-border{
-    padding-bottom: 0px;
+    padding-bottom: 2%;
     border-bottom: 10px solid $cam14;
     }
 
@@ -201,9 +201,10 @@ a {
 }
 
 #menu {
-  width: 1000px;
+  width: 72%;
   height: 55px;
   margin: 0px auto;
+  margin-left: 7%;
   padding: 0px;
 
   ul {
@@ -258,13 +259,13 @@ a {
 
 #content {
   width: 800px;
-  margin: -402px 0 0 110px;
+  margin: -23% 0 0 0;
 }
 
 .post {
   margin-bottom: 15px;
   border-bottom: 1px dashed $gains-boro;
-  padding: 10px;
+  padding: 0;
   margin-right: 203px;
   width: 800px;
 
@@ -325,7 +326,7 @@ a {
 #sidebar {
   float: right;
   width: 200px;
-  margin: 0 117px 0 0;
+  margin: 0 241px 0 0;
   padding: 30px 0px 0px 0px;
   color: black;
 
@@ -564,7 +565,7 @@ body {
   margin: 0;
 }
 
-/*Books*/
+/*cosmetics*/
 
 .row {
   display: -ms-flexbox;
@@ -597,7 +598,7 @@ body {
 .my-4 {
   margin-bottom: 1.5rem !important;
 }
-.card-book {
+.card-cosmetic {
   position: relative;
   display: -ms-flexbox;
   display: flex;
@@ -610,7 +611,7 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
 }
-.show-book {
+.show-cosmetic {
   width: 220px ;
   margin-bottom: 141px;
 }
@@ -658,15 +659,15 @@ button:hover {
   box-sizing: border-box;
 }
 
-/* Book product */
+/* cosmetic product */
 
-.book-image{
+.cosmetic-image{
   position: static!important;
   width: 100%;
   min-width: 391px;
 }
 
-.book-field{
+.cosmetic-field{
   width: 711px;
   padding: 0 24px;
 }
@@ -677,7 +678,7 @@ body {
   padding-top: 0px;
 }
 
-.ls-books {
+.ls-cosmetics {
   border: 1px solid #e7e7e7;
   .title_table {
     background-color: #B8E6FF;
@@ -801,7 +802,7 @@ button {
   list-style-type: none;
 }
 
-#book-card-wrap{
+#cosmetic-card-wrap{
   border:0px solid gray;
   .section{
   padding-bottom:20px;
@@ -961,11 +962,6 @@ button {
   height: 400px;
 }
 
-em {
-  background: yellow;
-}
-
-<<<<<<< be62289f9fbd6df6da032d2c570a9ff9bae5f490
 .fb-2{
   padding: 76px 0px 0px 50px;
 }
@@ -989,7 +985,7 @@ em {
   font-size: 18px;
 }
 
-.all-book{
+.all-cosmetic{
   width: 1000px;
 }
 
@@ -999,8 +995,24 @@ em {
   font-size: 20px;
 }
 
+em {
+  background: yellow;
+}
+
 .category-custom{
   a:hover, a:active {
     background-color: red;
   }
+}
+
+.cart-custom{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: 81px;
+}
+
+.language{
+  width: 10%;
+  float: right;
 }

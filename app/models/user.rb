@@ -18,10 +18,10 @@ class User < ApplicationRecord
   has_many :blogs, dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
-  has_many :likes_for_book, class_name: Emotion.name, dependent: :destroy
-  has_many :favorite_books, through: :likes_for_book, source: :book, dependent: :destroy
+  has_many :likes_for_cosmetic, class_name: Emotion.name, dependent: :destroy
+  has_many :favorite_cosmetics, through: :likes_for_cosmetic, source: :cosmetic, dependent: :destroy
   has_many :cart_items, dependent: :destroy
-  has_many :books_in_cart, through: :cart_items, source: :book, dependent: :destroy
+  has_many :cosmetics_in_cart, through: :cart_items, source: :cosmetic, dependent: :destroy
   has_many :orders, dependent: :destroy
   belongs_to :payment
   enum role: %i{member admin guest}
@@ -32,26 +32,26 @@ class User < ApplicationRecord
     return total
   end
 
-  def add_to_cart book
-    books_in_cart << book
+  def add_to_cart cosmetic
+    cosmetics_in_cart << cosmetic
   end
 
-  def delete_from_cart book
-    books_in_cart.delete(book)
+  def delete_from_cart cosmetic
+    cosmetics_in_cart.delete(cosmetic)
   end
 
-  def like book
-    favorite_books << book
-    book.update_attributes like: book.like + 1
+  def like cosmetic
+    favorite_cosmetics << cosmetic
+    cosmetic.update_attributes like: cosmetic.like + 1
   end
 
-  def unlike book
-    favorite_books.delete(book)
-    book.update_attributes like: book.like - 1
+  def unlike cosmetic
+    favorite_cosmetics.delete(cosmetic)
+    cosmetic.update_attributes like: cosmetic.like - 1
   end
 
-  def liked? book
-    favorite_books.include?(book)
+  def liked? cosmetic
+    favorite_cosmetics.include?(cosmetic)
   end
 
   class << self

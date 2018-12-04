@@ -1,4 +1,4 @@
-<div id="cart-button" class="row">
+<div id="cart-button" class="row cart-custom">
  <div id="dropdown-button" class="dropdown">
   <button class="btn btn-primary cart" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <%= fa_icon t(".shop") %><span class="badge"><%= current_user.cart_items.count %></span></button>
@@ -8,6 +8,6 @@
   </div>
 </div>
 <% if user_signed_in? %>
-  <button id="favorite-button" type="button" class="btn btn-danger"><i class="fa fa-heart"></i><%= link_to (t ".favorite"), user_favorite_books_path(current_user.id) %></button>
+  <button id="favorite-button" type="button" class="btn btn-danger"><i class="fa fa-heart"></i><%= link_to (t ".favorite"), user_favorite_cosmetics_path(current_user.id) %></button>
 <% end %>
 </div>

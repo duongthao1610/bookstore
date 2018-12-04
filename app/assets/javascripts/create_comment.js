@@ -2,11 +2,11 @@ $(function(){
   $('#new_comment input[type="submit"]').on('click', function(e){
     e.preventDefault();
     var comment_content = $('#comment_content').val();
-    var book_id = $('#comment_book_id').val();
-    data = {"comment": {"content": comment_content, "book_id": book_id}}
+    var cosmetic_id = $('#comment_cosmetic_id').val();
+    data = {"comment": {"content": comment_content, "cosmetic_id": cosmetic_id}}
     $.ajax({
       method: 'POST',
-      url: '/books/' + book_id + '/comments',
+      url: '/cosmetics/' + cosmetic_id + '/comments',
       type: 'JSON',
       data: data
     }).success(function(data){

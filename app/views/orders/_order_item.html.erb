@@ -1,5 +1,5 @@
 <div id="cart">
-<table class="table table-hover bg-table ls-books">
+<table class="table table-hover bg-table ls-cosmetics">
   <thead class="title_table">
     <tr>
       <th class="text-c"><%= t ".index" %></th>
@@ -13,17 +13,17 @@
   <% @items.each_with_index do |item, index| %>
     <tr>
       <td class="text-c">
-        <%= index_for params[:page], index, Settings.admin.book.per_page %>
+        <%= index_for params[:page], index, Settings.admin.cosmetic.per_page %>
       </td>
-      <td class="text-c"><%= link_to image_tag(item.book.image.url, size: Settings.admin.book.image_size) , book_path(item.book) %></td>
-      <td class="text-c"><%= link_to item.book.title, book_path(item.book) %> </td>
+      <td class="text-c"><%= link_to image_tag(item.cosmetic.image.url, size: Settings.admin.cosmetic.image_size) , cosmetic_path(item.cosmetic) %></td>
+      <td class="text-c"><%= link_to item.cosmetic.name, cosmetic_path(item.cosmetic) %> </td>
       <td class="price"><h4><%= number_to_currency item.paideach, locale: :vi %></h4></td>
       <td class="text-c"><%= item.quantity %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
-<table class="table table-hover bg-table ls-books">
+<table class="table table-hover bg-table ls-cosmetics">
   <tbody>
     <tr>
       <td id="total">

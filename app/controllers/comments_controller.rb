@@ -4,8 +4,8 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @book = Book.find_by id: params[:book_id]
-    @comment = @book.comments.build comment_params
+    @cosmetic = Cosmetic.find_by id: params[:cosmetic_id]
+    @comment = @cosmetic.comments.build comment_params
     @comment.user_id = current_user.id
     if @comment.save
       render json: {
@@ -16,14 +16,14 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @book = Book.find_by id: params[:book_id]
+    @cosmetic = Cosmetic.find_by id: params[:cosmetic_id]
     @comment = Comment.find_by id: params[:id]
 
     unless @comment.destroy
       flash[:danger] = t ".deleted_fail"
     end
     respond_to do |format|
-      format.html { redirect_to @book }
+      format.html { redirect_to @cosmetic }
       format.js
     end
   end
@@ -31,6 +31,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content, :book_id, :user_id)
+    params.require(:comment).permit(:content, :cosmetic_id, :user_id)
   end
 end

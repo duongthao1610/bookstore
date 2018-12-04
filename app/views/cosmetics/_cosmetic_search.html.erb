@@ -1,0 +1,7 @@
+<%= form_for cosmetics_path, method: :get do |f| %>
+  <p>
+    <%= text_field_tag :search_cosmetic, params[:search_cosmetic], id: "search_cosmetic",
+                       class: "form-control", placeholder: "Search cosmetic by name"%>
+    <%= submit_tag "Go", name: nil %>
+  </p>
+<% end %>
