@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_search
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
@@ -20,6 +21,12 @@ class ApplicationController < ActionController::Base
   def load_authors
     @authors = Author.select_author
   end
+
+  def set_search
+    @categories = Category.select_categories
+    @search = Book.ransack(params[:q])
+  end
+
 
   protected
 

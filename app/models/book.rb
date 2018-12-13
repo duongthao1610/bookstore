@@ -12,14 +12,9 @@ class Book < ApplicationRecord
 
   scope :order_by_created, -> {order created_at: :desc}
   scope :select_book, -> {select :id, :title, :price, :description}
-  scope :search_by_title, (lambda do |title|
-    where("title LIKE ?", "%#{title}%") unless title.nil?
-  end)
   scope :filter_by_book_type, -> category_name {Book.includes(:category)
     .where(categories: {name: category_name}) unless category_name.nil?}
 
-  scope :filter_by_price, -> price_about {where price >= price_about.split(" - ")[0] and
-    price <= price_about.split(" - ")[1] unless price_about.nil? }
   def search_data
     {
       title: title
@@ -27,7 +22,7 @@ class Book < ApplicationRecord
   end
 
   class << self
-    delegate :search, to: :Searchkick if self.public_instance_methods.include?(:search)
+    # delegate :search, to: :Searchkick if self.public_instance_methods.include?(:search)
 
   def to_xls(options = {})
     CSV.generate(options) do |csv|
@@ -40,4 +35,4 @@ class Book < ApplicationRecord
 end
 end
 
-Book.reindex
+# Book.reindex

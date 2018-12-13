@@ -1,11 +1,23 @@
-<div id="search">
-<h2><%=t ".search"%></h2>
-  <%= form_for books_path, method: :get do |f| %>
-    <p>
-      <%= text_field_tag :search_book, params[:search_book], id: "search_book",
-        class: "form-control", placeholder: "Search book by name", data: {autocomplete_source: books_path}%>
-    </p>
-  <% end %>
+<div class="row justify-content-center">
+  <div class="col-12 col-md-10 col-lg-8">
+    <%= search_form_for @search, class:"card card-sm" do |f| %>
+      <div class="card-body row no-gutters align-items-center">
+        <div class="col">
+          <div class="form-control form-control-lg form-control-borderless">
+            <%= f.text_field :title_cont, placeholder: t(".search_by_name"), id: "search_book"%>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <%= f.select :category_name_eq, options_from_collection_for_select(@categories,
+              :name, :name, @search.category_name_eq), {:include_blank => "All Categories"},
+                :class => "form-control ctg-select", id: "ctg-select", :html_options => {:onchange => "ctg"} %>
+          </div>
+        </div>
+      <div>
+        <%= f.submit "Search", class: "btn btn-primary btn-search" %>
+      </div>
+      </div>
+    <% end %>
+  </div>
 </div>
-
-

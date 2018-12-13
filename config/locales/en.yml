@@ -205,6 +205,8 @@ en:
       favorite: "   YOUR FAVORITE BOOK"
       shop: "shopping-cart"
       cart: "Cart"
+    search:
+      search_by_name: "Search book by name"
 
     header:
       link_hieu: "https://www.facebook.com/troublehfrom18"

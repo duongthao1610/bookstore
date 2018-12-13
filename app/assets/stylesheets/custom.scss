@@ -124,7 +124,7 @@ a {
 /* Search */
 
 #search {
-  width: 320px;
+  width: 50%;
   height: 60px;
   padding: 46px;
 #blog {
@@ -983,4 +983,35 @@ button {
 
 em {
   background: yellow;
+}
+
+.form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.justify-content-center{
+  width: 41%;
+}
+
+.card{
+  height: 44%;
+  max-width: 100%;
+}
+
+.ctg-select{
+  border: none;
+}
+
+.form-control{
+  box-shadow: none;
+}
+
+#search_book{
+  border-bottom: none;
 }

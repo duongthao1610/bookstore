@@ -13,10 +13,10 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require turbolinks
+//= require search
 //= require ckeditor/init
 //= require owl.carousel
 //= require i18n
 //= require i18n.js
 //= require i18n/translations
-//= require book_search
 //= require create_comment
