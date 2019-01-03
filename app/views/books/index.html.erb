@@ -5,6 +5,7 @@
     <p><%= t ".this_is" %> <strong><%= (t ".store") %></strong></p>
   </div>
 </div>
+
   <div class="all-book row">
     <% if params[:search_book] %>
       <%= render "search_results" %>
@@ -15,11 +16,3 @@
   <div class="paginate-book">
     <%= paginate @books, theme: "twitter-bootstrap-3" %>
   </div>
-</div>
-<% end %>
-<div class="all-book row">
-  <%= render @books %>
-</div>
-<div class="paginate-book">
-  <%= paginate @books, theme: "twitter-bootstrap-3" %>
-</div>

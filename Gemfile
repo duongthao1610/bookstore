@@ -34,7 +34,6 @@ gem "devise"
 gem "omniauth-google-oauth2"
 gem "cancancan"
 gem "ransack"
-<<<<<<< 968c295623399a4c9714a249cc9fd1ce196602e5
 gem "gmaps4rails"
 gem "gon"
 gem "whenever", require: false
@@ -42,9 +41,9 @@ gem 'sidekiq-client-cli'
 gem "sidekiq"
 gem "friendly_id"
 gem "social-share-button"
-=======
+gem "ransack"
 gem "searchkick"
->>>>>>> Full text search with searchkick
+gem "chartkick"
 
 group :development, :test do
   gem "sqlite3", "1.3.13"
