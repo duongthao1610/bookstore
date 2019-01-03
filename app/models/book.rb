@@ -14,7 +14,9 @@ class Book < ApplicationRecord
   scope :select_book, -> {select :id, :title, :price, :description}
   scope :filter_by_book_type, -> category_name {Book.includes(:category)
     .where(categories: {name: category_name}) unless category_name.nil?}
-
+   scope :search_by_title, (lambda do |title|
+    where("title LIKE ?", "%#{title}%") unless title.nil?
+  end)
   def search_data
     {
       title: title

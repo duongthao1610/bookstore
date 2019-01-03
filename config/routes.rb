@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     resources :users, except: [:edit]
     resources :authors, only: [:index]
     resources :xmls, only: [:index]
+    resources :charts, only: [:index]
   end
   resources :books do
     resources :comments

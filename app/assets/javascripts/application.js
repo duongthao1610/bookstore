@@ -20,3 +20,5 @@
 //= require i18n.js
 //= require i18n/translations
 //= require create_comment
+//= require Chart.bundle
+//= require chartkick
