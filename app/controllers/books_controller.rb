@@ -11,9 +11,10 @@ class BooksController < ApplicationController
 
   def index
     @pagy, @books = pagy Book.order_by_created.filter_by_book_type(params[:category])
+    @owl_books = Book.most_liked
 
-      @search = Book.ransack(params[:q])
-      @pagy, @books = pagy @search.result.includes(:category)
+    @search = Book.ransack(params[:q])
+    @pagy, @books = pagy @search.result.includes(:category)
     if params[:term]
       @search = Book.ransack(title_cont: params[:term], category_name_eq: params[:q][:category_name_eq])
       @books = @search.result.includes(:category)
@@ -25,6 +26,6 @@ class BooksController < ApplicationController
 
   def load_book
     @book = Book.find_by id: params[:id]
-    return if @book
+    @recipent = @book
   end
 end

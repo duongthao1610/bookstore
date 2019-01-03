@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get "/signup", to: "devise/registrations#new", as: :signup
   end
+  resources :activities, only: [:index]
   resources :cart_items
   resources :orders
   resources :users do
@@ -35,7 +36,6 @@ Rails.application.routes.draw do
   end
   resources :books do
     resources :comments
-    collection {post :search, to: "books#index"}
   end
 
 end

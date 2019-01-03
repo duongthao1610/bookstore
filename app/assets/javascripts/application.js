@@ -6,7 +6,6 @@
 //= require gmaps/google
 //= require markerclusterer
 //= require infobox_packed
-//= require rails-ujs
 //= require jquery
 //= require bootstrap
 //= require activestorage
@@ -16,6 +15,7 @@
 //= require search
 //= require ckeditor/init
 //= require owl.carousel
+//= require owl
 //= require i18n
 //= require i18n.js
 //= require i18n/translations

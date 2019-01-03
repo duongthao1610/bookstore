@@ -28,7 +28,12 @@ class ApplicationController < ActionController::Base
     @search = Book.ransack(params[:q])
   end
 
-
+  def notifications
+    if current_user
+     @blogs_notification = Blog.blogs_were_liked(current_user.id)
+    else return
+    end
+  end
   protected
 
   def configure_permitted_parameters

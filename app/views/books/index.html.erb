@@ -1,18 +1,24 @@
 <% provide(:title, (t ".home_title"))%>
-<div class="post">
-  <h2 class="title"><%=(t ".welcome")%></h2>
-  <div class="entry">
-    <p><%= t ".this_is" %> <strong><%= (t ".store") %></strong></p>
-  </div>
-</div>
-
-<div class="all-book row">
-  <% if params[:search_book] %>
-    <%= render "search_results" %>
+  <% if params[:q] %>
+    <div class="all-book row">
+      <div class="post">
+        <span class="title owl"><h2><%= "Search results" %></h2></span>
+      </div> </br>
+        <%= render @books %>
+    </div>
   <% else %>
+    <div class="all-book row">
+      <div class="post">
+        <span class="title owl"><h2><%=(t ".hot")%></h2></span>
+      </div>
+    <div class="post">
+      <div class="owl-carousel">
+        <%= render collection: @owl_books, partial: "owl_book" %>
+      </div>
+    </div>
     <%= render @books %>
+    </div>
   <% end %>
-</div>
 <div class="paginate-book">
   <%== pagy_nav_bootstrap(@pagy) %>
 </div>

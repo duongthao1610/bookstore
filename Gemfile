@@ -41,9 +41,11 @@ gem "sidekiq"
 gem "friendly_id"
 gem "social-share-button"
 gem "ransack"
-gem "searchkick"
+# gem "searchkick"
 gem "chartkick"
 gem "pagy"
+gem "public_activity"
+
 group :development, :test do
   gem "sqlite3", "1.3.13"
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

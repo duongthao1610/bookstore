@@ -264,6 +264,7 @@ a {
 }
 
 .post {
+  width: 100%;
   margin-bottom: 15px;
   border-bottom: 1px dashed $gains-boro;
   padding: 10px;
@@ -1015,3 +1016,26 @@ em {
 #search_book{
   border-bottom: none;
 }
+
+.like-blog-btn{
+  width: 80px;
+}
+
+#menu-button{
+  width: 20%;
+}
+
+#favorite-button{
+  width: 60%;
+  margin: 0;
+}
+
+#cart-button{
+  width: 18%;
+  margin-left: 5px;
+}
+
+#activities-button{
+  width: 18%;
+}
+
